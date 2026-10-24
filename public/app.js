@@ -21,24 +21,24 @@ document.querySelectorAll('[data-demo]').forEach(b => b.addEventListener('click'
   const demo = b.dataset.demo;
   if (demo === 'orbit') {
     const shape = document.createElement('div'); shape.className = 'demo-orbit'; stage.append(shape);
-    const control = document.createElement('input'); control.type='range'; control.min='2';control.max='20';control.value='9';control.className='color-slider';control.setAttribute('aria-label','軌道旋轉週期');
+    const control = document.createElement('input'); control.type='range'; control.min='2';control.max='20';control.value='9';control.className='color-slider';control.setAttribute('aria-label',siteText('orbitLabel'));
     control.addEventListener('input',()=>shape.style.animationDuration=`${control.value}s`);stage.append(control);
-    document.querySelector('#demo-description').textContent='軌道之外 / 拖動滑桿，調整軌道旋轉速度。';
+    document.querySelector('#demo-description').textContent=siteText('orbitDescription');
   } else if(demo === 'gradient') {
     const shape=document.createElement('div');shape.className='glass-shape';stage.append(shape);stage.style.background='#b9affb';
-    const control=document.createElement('input');control.type='range';control.min='0';control.max='360';control.value='0';control.className='color-slider';control.setAttribute('aria-label','色彩色相');control.addEventListener('input',()=>{shape.style.filter=`hue-rotate(${control.value}deg)`;stage.style.background=`hsl(${255+Number(control.value)} 65% 80%)`;});stage.append(control);
-    document.querySelector('#demo-description').textContent='流動的色彩 / 拖動滑桿，找到屬於你的色彩。';
+    const control=document.createElement('input');control.type='range';control.min='0';control.max='360';control.value='0';control.className='color-slider';control.setAttribute('aria-label',siteText('colorLabel'));control.addEventListener('input',()=>{shape.style.filter=`hue-rotate(${control.value}deg)`;stage.style.background=`hsl(${255+Number(control.value)} 65% 80%)`;});stage.append(control);
+    document.querySelector('#demo-description').textContent=siteText('colorDescription');
   } else {
-    const input=document.createElement('input');input.className='type-input';input.value='想像無限';input.maxLength=12;input.setAttribute('aria-label','輸入你想展示的文字');stage.append(input);
-    document.querySelector('#demo-description').textContent='字裡的可能 / 輸入一個念頭，讓文字成為畫面。最多 12 個字。';
+    const input=document.createElement('input');input.className='type-input';input.value=siteText('typeDefault');input.maxLength=12;input.setAttribute('aria-label',siteText('typeLabel'));stage.append(input);
+    document.querySelector('#demo-description').textContent=siteText('typeDescription');
   }
   document.querySelector('#demo-label').textContent=b.querySelector('h3').textContent+' / LIVE EXPERIMENT';dialog.showModal();
 }));
 let toastTimer;
 document.querySelector('#copy-link').addEventListener('click',async()=>{
   const toast=document.querySelector('#toast');
-  try { await navigator.clipboard.writeText('https://dennis-tw.com/');toast.textContent='網站連結已複製'; }
-  catch { toast.textContent='網站連結：https://dennis-tw.com/'; }
+  try { await navigator.clipboard.writeText('https://dennis-tw.com/');toast.textContent=siteText('copied'); }
+  catch { toast.textContent=siteText('copyFallback')+'https://dennis-tw.com/'; }
   toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3500);
 });
 const canvas=document.querySelector('#orb'),ctx=canvas.getContext('2d');
