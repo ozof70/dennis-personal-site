@@ -1,10 +1,10 @@
-# Dennis — 想法不設限
+# Dennis Hsiao — Personal timeline
 
-Personal website for Dennis. Primary domain: https://dennis-tw.com/
+Responsive bilingual personal resume for https://dennis-tw.com/.
 
-## Local development
+## Development
 
-Requires Node.js 20+. No dependency installation required.
+Node.js 20+; no third-party build dependencies.
 
 ```sh
 npm run dev
@@ -12,14 +12,14 @@ npm run check
 npm run build
 ```
 
-Open http://127.0.0.1:4173. Build output is `dist/`.
+Netlify builds `dist/` from `public/` with `netlify.toml`. GitHub main automatically deploys to production.
 
-## Deployment
+## Content
 
-Import this repository into Netlify. The included `netlify.toml` configures the build and publish directory. Set `dennis-tw.com` as the primary custom domain, then add `www.dennis-tw.com` as an alias. Use the DNS targets shown by Netlify in the existing Cloudflare zone; preserve unrelated mail and verification records. The included redirect sends www traffic to the primary domain.
+Timeline content was summarized from Dennis’s LinkedIn profile and its six certifications on 2026-10-24. `scripts/resume-data.mjs` retains the bilingual editorial source; the deployed markup is `public/index.html` and translations are in `public/language.js`. Keep these in sync when updating roles or dates. No private analytics, credential IDs, or recruiter-only information is published.
 
-## Content and interactions
+The timeline is ordered by starting date, newest first. Dates show actual intervals rather than LinkedIn’s rounded duration labels. Roles marked Present reflect the LinkedIn profile at review time.
 
-Edit personal copy and links in `public/index.html`, styles in `public/style.css`, and experiments in `public/app.js`. The three experiments are illustrative demos, not claims about past professional work. Features include particle animation, scroll reveals, category filters, keyboard-accessible dialogs, color and orbit controls, and editable typography. Reduced-motion preferences are respected. This version has no backend or visitor data collection.
+## Interaction
 
-Fonts use Google Fonts with system fallbacks.
+Scroll reveals progressively show timeline milestones and the three social links at the bottom. Chinese/English selection is saved locally. A gently pulsing, color-shifting honeycomb cursor is enabled for mouse pointers. Reduced-motion and keyboard navigation are supported. The static site has no backend or visitor data collection. Fonts use Google Fonts with local fallbacks.
