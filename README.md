@@ -1,25 +1,20 @@
-# Dennis Hsiao — Personal timeline
+# Dennis Hsiao — Personal website
 
-Responsive bilingual personal resume for https://dennis-tw.com/.
+Primary domain: https://dennis-tw.com/
 
 ## Development
 
-Node.js 20+; no third-party build dependencies.
+Node.js 20+, no build dependencies. Run `npm run dev`, `npm run check`, and `npm run build`. Netlify publishes `dist/` and automatically deploys GitHub main.
 
-```sh
-npm run dev
-npm run check
-npm run build
-```
+## Pages and content
 
-Netlify builds `dist/` from `public/` with `netlify.toml`. GitHub main automatically deploys to production.
+- `/`: short introduction and navigation.
+- `/experience/`: work, entrepreneurship and volunteering.
+- `/education/`: degree studies and international learning.
+- `/certifications/`: six credentials.
 
-## Content
-
-Timeline content was summarized from Dennis’s LinkedIn profile and its six certifications on 2026-10-24. `scripts/resume-data.mjs` retains the bilingual editorial source; the deployed markup is `public/index.html` and translations are in `public/language.js`. Keep these in sync when updating roles or dates. No private analytics, credential IDs, or recruiter-only information is published.
-
-The timeline is ordered by starting date, newest first. Dates show actual intervals rather than LinkedIn’s rounded duration labels. Roles marked Present reflect the LinkedIn profile at review time.
+Edit `scripts/resume-data.mjs` for bilingual resume content. `scripts/generate-pages.mjs` generates the four static pages and translation dictionary during builds, retaining social icons from the home page. The public relations title was corrected by Dennis to Head of Public Relations. Other career content was summarized from Dennis’s LinkedIn profile on 2026-10-24. No credential numbers or private account information is published.
 
 ## Interaction
 
-Scroll reveals progressively show timeline milestones and the three social links at the bottom. Chinese/English selection is saved locally. A gently pulsing, color-shifting honeycomb cursor is enabled for mouse pointers. Reduced-motion and keyboard navigation are supported. The static site has no backend or visitor data collection. Fonts use Google Fonts with local fallbacks.
+Independent scroll-revealed timelines, Chinese/English language preference, grouped social icons, and a pointer-responsive triangular background lattice with fading illumination. Reduced-motion and touch visitors receive a static subtle grid. No backend or visitor data collection. Fonts use Google Fonts with local fallbacks.
