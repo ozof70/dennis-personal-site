@@ -23,10 +23,14 @@ const translations = [
  ['.project-one .project-caption > span','Visual'],['.project-two .project-caption > span','Interactive'],['.project-three .project-caption > span','Interactive'],
  ['.now-line > div > span','Still exploring'],['.now-line p','The next great idea<br>might start with a conversation.'],
  ['.contact h2','Let’s explore <span>what’s next.</span><span class="contact-arrow">↗</span>'],
- ['.contact-bottom > p','Stay curious.<br>Stay connected.'],['.contact-link','Find me on GitHub <span>↗</span>'],['#copy-link','Copy site link <span>⧉</span>']
+ ['.contact-bottom > p','Stay curious.<br>Stay connected.'],['#copy-link','Copy site link <span>⧉</span>']
 ];
 const languageEntries = translations.map(([selector,en])=>{const node=document.querySelector(selector);return {node,en,zh:node?.innerHTML};});
 const languageLabels = [
+ ['.social-links','社群連結','Social links'],
+ ['[data-social=instagram]','Dennis 的 Instagram（另開分頁）','Dennis on Instagram (opens in a new tab)'],
+ ['[data-social=linkedin]','Dennis 的 LinkedIn（另開分頁）','Dennis on LinkedIn (opens in a new tab)'],
+ ['[data-social=github]','Dennis 的 GitHub（另開分頁）','Dennis on GitHub (opens in a new tab)'],
  ['.header .brand','Dennis 首頁','Dennis home'],['.header nav','主選單','Main navigation'],
  ['.orbit-scene','互動粒子星球','Interactive particle planet'],['.filters','實驗分類','Experiment categories'],['#close-dialog','關閉實驗','Close experiment']
 ];
