@@ -5,13 +5,13 @@ if('IntersectionObserver' in window){
  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});
  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 }
-const timeline=document.querySelector('.timeline-wrap');
+const timelines=document.querySelectorAll('.timeline-wrap');
 let scrollFrame=0;
 function updateJourney(){
  const max=document.documentElement.scrollHeight-innerHeight;
  document.querySelector('.progress').style.width=`${max>0?scrollY/max*100:0}%`;
- if(timeline){const box=timeline.getBoundingClientRect(), amount=Math.max(0,Math.min(1,(innerHeight*.65-box.top)/box.height));
- document.querySelector('.timeline-fill').style.transform=`scaleY(${amount})`;
+ for(const timeline of timelines){const box=timeline.getBoundingClientRect(), amount=Math.max(0,Math.min(1,(innerHeight*.65-box.top)/box.height));
+ timeline.querySelector('.timeline-fill').style.transform=`scaleY(${amount})`;
  }scrollFrame=0;
 }
 addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(updateJourney);},{passive:true});
