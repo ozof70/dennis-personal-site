@@ -26,7 +26,7 @@ export default async function(req){
   const id=path.split('/').pop();if(!idPattern.test(id))return json({error:'Not found'},404);
   const item=await store().get('projects/'+id,{type:'json'});if(!item?.asset)return json({error:'Not found'},404);
   const bytes=await store().get('assets/'+id,{type:'arrayBuffer'});if(!bytes)return json({error:'Not found'},404);
-  return new Response(bytes,{headers:{'Content-Type':item.asset.type,'Content-Disposition':`${item.asset.type==='application/pdf'?'attachment':'inline'}; filename="${id}.${item.asset.ext}"`,'X-Content-Type-Options':'nosniff','Content-Security-Policy':"sandbox; default-src 'none'",'Cache-Control':'public, max-age=300'}});
+  return new Response(bytes,{headers:{'Content-Type':item.asset.type,'Content-Disposition':`${item.asset.type==='application/pdf'?'attachment':'inline'}; filename="${id}.${item.asset.ext}"`,'X-Content-Type-Options':'nosniff','Content-Security-Policy':"sandbox; default-src 'none'",'Cache-Control':'no-store','Netlify-CDN-Cache-Control':'no-store'}});
  }
  if(path==='/api/projects'&&req.method==='GET'){
   const records=[];for await(const page of store().list({prefix:'projects/',paginate:true})){const items=await Promise.all(page.blobs.map(b=>store().get(b.key,{type:'json'})));records.push(...items.filter(Boolean));}
