@@ -12,6 +12,31 @@
   status = 301
   force = true
 
+# 破局十六週 site (separate Netlify site), served at /管理學
+[[redirects]]
+  from = "/管理學"
+  to = "/管理學/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/%E7%AE%A1%E7%90%86%E5%AD%B8"
+  to = "/%E7%AE%A1%E7%90%86%E5%AD%B8/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/管理學/*"
+  to = "https://nccu-po-ju-16.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/%E7%AE%A1%E7%90%86%E5%AD%B8/*"
+  to = "https://nccu-po-ju-16.netlify.app/:splat"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
