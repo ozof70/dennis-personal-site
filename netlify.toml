@@ -14,12 +14,6 @@
 
 # 破局十六週 site (separate Netlify site), served at /management
 [[redirects]]
-  from = "/management"
-  to = "/management/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/management/*"
   to = "https://nccu-po-ju-16.netlify.app/:splat"
   status = 200
