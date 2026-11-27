@@ -12,6 +12,25 @@
   status = 301
   force = true
 
+# NTU NEST deck (separate Netlify site), served at /slides
+[[redirects]]
+  from = "/slides"
+  to = "/slides/s/ntu-nest-startup-week"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slides/"
+  to = "/slides/s/ntu-nest-startup-week"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slides/*"
+  to = "https://ntu-nest-slides.netlify.app/slides/:splat"
+  status = 200
+  force = true
+
 # 破局十六週 site (separate Netlify site), served at /management
 [[redirects]]
   from = "/management/*"
