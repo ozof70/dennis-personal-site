@@ -34,8 +34,8 @@
 # Temporary: every other path shows the cartoon homepage.
 [[redirects]]
   from = "/*"
-  to = "/"
-  status = 302
+  to = "/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
