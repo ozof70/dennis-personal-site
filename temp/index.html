@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#8fd3ff">
+<title>dennis</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body { background: linear-gradient(#7cc8ff 0%, #bfe6ff 55%, #fff4d6 100%); font-family: "Nunito", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif; }
+  svg { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .sun { transform-origin: 1180px 150px; animation: spin 30s linear infinite; }
+  .sun-face { animation: bob 3s ease-in-out infinite; }
+  .cloud { animation: drift linear infinite; }
+  .c1 { animation-duration: 60s; }
+  .c2 { animation-duration: 85s; animation-delay: -30s; }
+  .c3 { animation-duration: 70s; animation-delay: -50s; }
+  .hills-far { animation: slide 40s linear infinite; }
+  .hills-near { animation: slide 22s linear infinite; }
+  .flowers { animation: slide 22s linear infinite; }
+  .hero { animation: hop 0.9s ease-in-out infinite; transform-origin: 700px 610px; }
+  .shadow { animation: squash 0.9s ease-in-out infinite; transform-origin: 700px 642px; }
+  .leg-l { animation: step 0.45s ease-in-out infinite alternate; transform-origin: 685px 600px; }
+  .leg-r { animation: step 0.45s ease-in-out infinite alternate-reverse; transform-origin: 715px 600px; }
+  .arm { animation: wave 1.2s ease-in-out infinite; transform-origin: 742px 545px; }
+  .eyes { animation: blink 4s infinite; transform-origin: 700px 520px; }
+  .bird { animation: fly 14s linear infinite; }
+  .wing { animation: flap 0.3s ease-in-out infinite alternate; transform-origin: center; transform-box: fill-box; }
+  .balloon { animation: float 4s ease-in-out infinite; transform-origin: 790px 420px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes bob { 50% { transform: translateY(6px); } }
+  @keyframes drift { from { transform: translateX(-420px); } to { transform: translateX(1900px); } }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-1400px); } }
+  @keyframes hop { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-22px); } }
+  @keyframes squash { 0%,100% { transform: scaleX(1); opacity: .28; } 50% { transform: scaleX(.75); opacity: .16; } }
+  @keyframes step { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+  @keyframes wave { 0%,100% { transform: rotate(10deg); } 50% { transform: rotate(-35deg); } }
+  @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(.1); } }
+  @keyframes fly { from { transform: translate(1500px, 0); } to { transform: translate(-200px, -60px); } }
+  @keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(-.6); } }
+  @keyframes float { 0%,100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(4deg) translateY(-10px); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A cartoon character hopping across rolling hills">
+  <g class="sun">
+    <circle cx="1180" cy="150" r="70" fill="#ffd34d"/>
+    <g stroke="#ffd34d" stroke-width="10" stroke-linecap="round">
+      <line x1="1180" y1="50" x2="1180" y2="20"/><line x1="1180" y1="250" x2="1180" y2="280"/>
+      <line x1="1080" y1="150" x2="1050" y2="150"/><line x1="1280" y1="150" x2="1310" y2="150"/>
+      <line x1="1110" y1="80" x2="1088" y2="58"/><line x1="1250" y1="220" x2="1272" y2="242"/>
+      <line x1="1250" y1="80" x2="1272" y2="58"/><line x1="1110" y1="220" x2="1088" y2="242"/>
+    </g>
+  </g>
+  <g class="sun-face">
+    <circle cx="1160" cy="140" r="7" fill="#5a3b00"/><circle cx="1200" cy="140" r="7" fill="#5a3b00"/>
+    <path d="M1158 165 q22 20 44 0" stroke="#5a3b00" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="1145" cy="160" r="9" fill="#ff9f6b" opacity=".6"/><circle cx="1215" cy="160" r="9" fill="#ff9f6b" opacity=".6"/>
+  </g>
+
+  <g class="cloud c1" fill="#fff"><ellipse cx="120" cy="140" rx="80" ry="34"/><circle cx="90" cy="120" r="34"/><circle cx="145" cy="112" r="42"/></g>
+  <g class="cloud c2" fill="#fff" opacity=".9"><ellipse cx="160" cy="250" rx="95" ry="36"/><circle cx="125" cy="228" r="38"/><circle cx="190" cy="220" r="46"/></g>
+  <g class="cloud c3" fill="#fff" opacity=".8"><ellipse cx="100" cy="60" rx="60" ry="24"/><circle cx="80" cy="48" r="26"/><circle cx="120" cy="42" r="30"/></g>
+
+  <g class="bird">
+    <g transform="translate(0 200)">
+      <ellipse cx="0" cy="0" rx="18" ry="12" fill="#ff7aa8"/>
+      <path class="wing" d="M-4 -4 q10 -22 22 -4 z" fill="#ff4d8d"/>
+      <circle cx="-9" cy="-3" r="2.5" fill="#222"/>
+      <path d="M-18 0 l-10 -3 l10 6z" fill="#ffb347"/>
+    </g>
+  </g>
+
+  <g class="hills-far">
+    <path d="M0 560 Q175 460 350 560 T700 560 T1050 560 T1400 560 T1750 560 T2100 560 T2450 560 T2800 560 V800 H0Z" fill="#9fdc8a"/>
+  </g>
+  <g class="hills-near">
+    <path d="M0 650 Q233 580 466 650 T933 650 T1400 650 T1866 650 T2333 650 T2800 650 V800 H0Z" fill="#6cc46a"/>
+  </g>
+  <g class="flowers">
+    <g transform="translate(160 690)"><circle r="9" fill="#fff"/><circle r="4" fill="#ffcf33"/></g>
+    <g transform="translate(420 720)"><circle r="9" fill="#ff8fb8"/><circle r="4" fill="#fff"/></g>
+    <g transform="translate(700 700)"><circle r="9" fill="#fff"/><circle r="4" fill="#ffcf33"/></g>
+    <g transform="translate(980 730)"><circle r="9" fill="#b49bff"/><circle r="4" fill="#fff"/></g>
+    <g transform="translate(1250 705)"><circle r="9" fill="#fff"/><circle r="4" fill="#ffcf33"/></g>
+    <g transform="translate(1560 690)"><circle r="9" fill="#fff"/><circle r="4" fill="#ffcf33"/></g>
+    <g transform="translate(1820 720)"><circle r="9" fill="#ff8fb8"/><circle r="4" fill="#fff"/></g>
+    <g transform="translate(2100 700)"><circle r="9" fill="#fff"/><circle r="4" fill="#ffcf33"/></g>
+    <g transform="translate(2380 730)"><circle r="9" fill="#b49bff"/><circle r="4" fill="#fff"/></g>
+    <g transform="translate(2650 705)"><circle r="9" fill="#fff"/><circle r="4" fill="#ffcf33"/></g>
+  </g>
+
+  <ellipse class="shadow" cx="700" cy="642" rx="62" ry="10" fill="#1f5a2a"/>
+  <g class="hero">
+    <g class="balloon">
+      <line x1="745" y1="548" x2="790" y2="430" stroke="#555" stroke-width="2"/>
+      <ellipse cx="795" cy="395" rx="34" ry="40" fill="#ff5d6c"/>
+      <ellipse cx="783" cy="380" rx="8" ry="12" fill="#fff" opacity=".5"/>
+      <path d="M788 434 l7 -6 l7 6z" fill="#ff5d6c"/>
+    </g>
+    <path class="leg-l" d="M685 595 v28 q0 8 -10 8 h-6" stroke="#2b2b3a" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path class="leg-r" d="M715 595 v28 q0 8 10 8 h6" stroke="#2b2b3a" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <ellipse cx="700" cy="540" rx="68" ry="66" fill="#ffe08a"/>
+    <path d="M640 505 q60 -70 120 0 q-20 -40 -60 -42 q-40 2 -60 42z" fill="#3a2a20"/>
+    <g class="eyes">
+      <ellipse cx="678" cy="522" rx="8" ry="11" fill="#2b2b3a"/><ellipse cx="722" cy="522" rx="8" ry="11" fill="#2b2b3a"/>
+      <circle cx="681" cy="518" r="3" fill="#fff"/><circle cx="725" cy="518" r="3" fill="#fff"/>
+    </g>
+    <circle cx="662" cy="548" r="10" fill="#ff9f8a" opacity=".6"/><circle cx="738" cy="548" r="10" fill="#ff9f8a" opacity=".6"/>
+    <path d="M684 553 q16 16 32 0" stroke="#2b2b3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M636 548 q-22 10 -26 34" stroke="#ffe08a" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path class="arm" d="M762 548 q20 -6 28 -24" stroke="#ffe08a" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M652 590 q48 22 96 0 v6 q-48 26 -96 0z" fill="#5aa9ff"/>
+  </g>
+
+  <text x="700" y="760" text-anchor="middle" font-size="30" font-weight="800" fill="#1f5a2a" letter-spacing="6">dennis</text>
+</svg>
+</body>
+</html>
